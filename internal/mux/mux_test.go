@@ -45,7 +45,7 @@ func stressDuplex(t *testing.T) {
 
 	// Stress the system whilst testing (tests for #2152)
 	// wasm is excluded because the additional stress makes test run too slowly.
-	if runtime.GOOS != "wasm" {
+	if runtime.GOARCH != "wasm" {
 		spin := func() {
 			// nolint:staticcheck
 			// Suppress linter warning about spinning loop (SA5004)—spinning is intended.
